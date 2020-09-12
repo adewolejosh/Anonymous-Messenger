@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	{% load staticfiles %}
+	<link href="{% static 'bootstrap.min.css' %}" rel="stylesheet">
+	<title>dashboard</title>
+</head>
+<body class="text-center" style="background-color: black;">
+	{% for texts in textings %}
+	<ul>
+	<li class="card border-light mb-3" style="background-color: grey; border-color: purple;">
+		<div class="card-header"> 	New message </div>
+		<div class="card-body">
+            <p class="card-text">{{ texts }}</p>
+        </div>
+	</li>
+	</ul>
+	{% endfor %}
+</body>
+</html>

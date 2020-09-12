@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	{% load staticfiles %}
+	<link href="{% static 'bootstrap.min.css' %}" rel="stylesheet">
+	<title>Say your mind</title>
+</head>
+<body class="text-center">
+	<form action="" method="post" class="form-signin">
+		{% if messages %}
+			{% for message in messages %}
+				<ul>{{ message }}</ul>
+			{% endfor %}
+		{% endif %}
+      <h4 class="h3 mb-3 font-weight-normal">Your Message for Joshua &#x1F600 &#x1F602 &#x1F613</h4>
+      {% csrf_token %}
+      <textarea id="note" class="form-control" name="note" placeholder="Write to Joshua, Anonymously" maxlength="1000" cols="30" rows="10"></textarea>
+		
+	  <p><button class="btn btn-lg btn-primary btn-block" type="submit">Submit</button></p>
+
+		<p class="mt-5 mb-3 text-muted">© 2019</p>
+	</form>
+
+</body>
+</html>
